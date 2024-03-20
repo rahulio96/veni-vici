@@ -4,7 +4,12 @@ import { useState } from 'react';
 
 function Current() {
   
-  const [imgURL, setImgURL] = useState('');
+  const [imgURL, setImgURL] = useState('')
+  const [name, setName] = useState('')
+  const [breed, setBreed] = useState('')
+  const [weight, setWeight] = useState('')
+  const [age, setAge] = useState('')
+  const [country, setCountry] = useState('')
 
   const headers = new Headers({
     "Content-Type": "application/json",
@@ -18,10 +23,14 @@ function Current() {
   };
 
   const newCat = async () => {
-  const response = await fetch("https://api.thecatapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=1", requestOptions)
-  const data = await response.json()
-  console.log(data[0].url)
-  setImgURL(data[0].url)
+    const response = await fetch("https://api.thecatapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=1&order=RANDOM&page=0&limit=1", requestOptions)
+    const data = await response.json()
+    console.log(data[0])
+    setImgURL(data[0].url)
+    setBreed(data[0].breeds[0].name)
+    setWeight(data[0].breeds[0].weight.imperial)
+    setAge(data[0].breeds[0].life_span)
+    setCountry(data[0].breeds[0].origin)
   }
 
   return (
@@ -29,6 +38,10 @@ function Current() {
       <h1> Veni Vici!</h1>
       <p>Discover cats from your wildest dreams?</p>
       <button onClick={newCat}>Discover!</button>
+      <div>Breed: {breed}</div>
+      <div>Lifespan: {age}</div>
+      <div>Weight (in lbs): {weight}</div>
+      <div>Origin: {country}</div>
       <img src={imgURL} />
     </div>
   )
