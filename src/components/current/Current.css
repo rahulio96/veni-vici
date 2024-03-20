@@ -12,6 +12,20 @@ img {
     margin-top: 50px;
 }
 
+.details-container {
+    margin-top: 10px;
+}
+
+.details {
+    padding: 5px;
+    background-color: #2274A5;
+    margin: 5px;
+}
+
+.details:hover {
+    border: 1px solid white;
+}
+
 @media only screen and (max-width: 900px) {
     .current-container {
         margin-top: 200px;

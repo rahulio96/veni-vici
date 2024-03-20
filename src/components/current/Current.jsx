@@ -5,7 +5,6 @@ import { useState } from 'react';
 function Current() {
   
   const [imgURL, setImgURL] = useState('')
-  const [name, setName] = useState('')
   const [breed, setBreed] = useState('')
   const [weight, setWeight] = useState('')
   const [age, setAge] = useState('')
@@ -34,14 +33,17 @@ function Current() {
   }
 
   return (
+
     <div className='current-container'>
       <h1> Veni Vici!</h1>
       <p>Discover cats from your wildest dreams?</p>
       <button onClick={newCat}>Discover!</button>
-      <div>Breed: {breed}</div>
-      <div>Lifespan: {age}</div>
-      <div>Weight (in lbs): {weight}</div>
-      <div>Origin: {country}</div>
+      <div className='details-container'>
+        <button className='details'>{breed}</button>
+        <button className='details'>{age}</button>
+        <button className='details'>{weight}</button>
+        <button className='details'>{country}</button>
+      </div>
       <img src={imgURL} />
     </div>
   )
