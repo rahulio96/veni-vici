@@ -9,7 +9,8 @@
 img {
     width: 400px;
     height: auto;
-    margin-top: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .details-container {
@@ -22,8 +23,18 @@ img {
     margin: 5px;
 }
 
+.discover {
+    padding: 10px;
+    background-color: white;
+    color: #111;
+}
+
+.discover:hover {
+    border: 1.5px solid #2274A5;
+}
+
 .details:hover {
-    border: 1px solid white;
+    border: 1.5px solid white;
 }
 
 @media only screen and (max-width: 900px) {

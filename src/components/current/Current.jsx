@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 
 function Current() {
+  const URL = "https://api.thecatapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=1&order=RANDOM&page=0&limit=1"
   
   const [imgURL, setImgURL] = useState('')
   const [breed, setBreed] = useState('')
@@ -22,7 +23,7 @@ function Current() {
   };
 
   const newCat = async () => {
-    const response = await fetch("https://api.thecatapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=1&order=RANDOM&page=0&limit=1", requestOptions)
+    const response = await fetch(URL, requestOptions)
     const data = await response.json()
     console.log(data[0])
     setImgURL(data[0].url)
@@ -37,14 +38,14 @@ function Current() {
     <div className='current-container'>
       <h1> Veni Vici!</h1>
       <p>Discover cats from your wildest dreams?</p>
-      <button onClick={newCat}>Discover!</button>
       <div className='details-container'>
-        <button className='details'>{breed}</button>
-        <button className='details'>{age}</button>
-        <button className='details'>{weight}</button>
-        <button className='details'>{country}</button>
+        {breed == '' ? <></> : <button className='details'>{breed}</button>}
+        {age == '' ? <></> : <button className='details'>{age} years</button>}
+        {weight == '' ? <></> : <button className='details'>{weight} lbs</button>}
+        {breed == '' ? <></> : <button className='details'>{country}</button>}
       </div>
       <img src={imgURL} />
+      <button className='discover' onClick={newCat}>Discover!</button>
     </div>
   )
 }
