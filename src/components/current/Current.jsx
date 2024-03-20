@@ -11,10 +11,10 @@ function Current() {
   const [age, setAge] = useState('')
   const [country, setCountry] = useState('')
   
-  const [excludedBreed, setExcludedBreed] = useState([])
+  const [excludedList, setExcludedList] = useState([])
 
   function updateExcludedList(newList) {
-    setExcludedBreed(newList);
+    setExcludedList(newList);
   }
 
   const headers = new Headers({
@@ -35,7 +35,7 @@ function Current() {
       const response = await fetch(URL, requestOptions)
       const data = await response.json()
       currentBreed = data[0].breeds[0].name
-      if (!excludedBreed.includes(currentBreed)) {
+      if (!excludedList.includes(currentBreed)) {
         console.log(data[0])
         setImgURL(data[0].url)
         setBreed(currentBreed)
@@ -48,22 +48,22 @@ function Current() {
   }
 
   const exclude = () => {
-    if (!excludedBreed.includes(breed)) {
-      setExcludedBreed([...excludedBreed, breed])
+    if (!excludedList.includes(breed)) {
+      setExcludedList([...excludedList, breed])
     }
   }
 
   return (
     <>
-    <BanList excludedList={excludedBreed} updateExcludedList={updateExcludedList}/>
+    <BanList excludedList={excludedList} updateExcludedList={updateExcludedList}/>
     <div className='current-container'>
       <h1> Veni Vici!</h1>
       <p>Discover cats from your wildest dreams?</p>
       <div className='details-container'>
         {breed == '' ? <></> : <button onClick={exclude} className='details'>{breed}</button>}
-        {age == '' ? <></> : <button className='details'>{age} years</button>}
-        {weight == '' ? <></> : <button className='details'>{weight} lbs</button>}
-        {breed == '' ? <></> : <button className='details'>{country}</button>}
+        {country == '' ? <></> : <button className='details'>{country}</button>}
+        {age == '' ? <></> : <button className='details-no-click'>{age} years</button>}
+        {weight == '' ? <></> : <button className='details-no-click'>{weight} lbs</button>}
       </div>
       <img src={imgURL} />
       <button className='discover' onClick={newCat}>Discover!</button>

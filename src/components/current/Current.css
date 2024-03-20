@@ -23,6 +23,18 @@ img {
     margin: 5px;
 }
 
+.details:hover {
+    border: 1.5px solid white;
+}
+
+.details-no-click {
+    padding: 10px;
+    background-color: #2275a591;
+    margin: 5px; 
+    border: none;
+    cursor: default;
+}
+
 .discover {
     padding: 10px;
     background-color: white;
@@ -31,10 +43,6 @@ img {
 
 .discover:hover {
     border: 1.5px solid #2274A5;
-}
-
-.details:hover {
-    border: 1.5px solid white;
 }
 
 @media only screen and (max-width: 900px) {
