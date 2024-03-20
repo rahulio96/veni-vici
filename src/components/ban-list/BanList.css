@@ -11,6 +11,25 @@
     overflow-x: hidden;
     padding: 20px;
 }
+.banned {
+    padding: 10px;
+    background-color: #D1603D;
+    margin: 5px;
+    width: fit-content;
+    font-size: small;
+}
+
+.banned:hover {
+    border: 1.5px solid white;
+}
+
+p {
+    margin: 0;
+}
+
+h2 {
+    margin: 0;
+}
 
 @media only screen and (max-width: 900px) {
     .ban-list-container {

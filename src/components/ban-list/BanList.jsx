@@ -1,11 +1,16 @@
 import './BanList.css'
 
-function BanList() {
+function BanList( {excludedList} ) {
 
     return (
       <div className="ban-list-container">
-        <h3>Ban List</h3>
+        <h2>Ban List</h2>
         <p>Select an attribute in your listing to ban it</p>
+        <div>
+          {excludedList.map((item, index) => (
+              <button className='banned' key={index}>{item}</button>
+            ))}
+        </div>
       </div>
     )
   }
