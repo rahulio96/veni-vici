@@ -13,6 +13,10 @@ function Current() {
   
   const [excludedBreed, setExcludedBreed] = useState([])
 
+  function updateExcludedList(newList) {
+    setExcludedBreed(newList);
+  }
+
   const headers = new Headers({
     "Content-Type": "application/json",
     "x-api-key": import.meta.env.VITE_API_KEY
@@ -51,7 +55,7 @@ function Current() {
 
   return (
     <>
-    <BanList excludedList={excludedBreed}/>
+    <BanList excludedList={excludedBreed} updateExcludedList={updateExcludedList}/>
     <div className='current-container'>
       <h1> Veni Vici!</h1>
       <p>Discover cats from your wildest dreams?</p>
