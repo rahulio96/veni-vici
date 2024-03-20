@@ -7,7 +7,16 @@
 }
 
 img {
-    width: 300px;
+    width: 400px;
     height: auto;
     margin-top: 50px;
+}
+
+@media only screen and (max-width: 900px) {
+    .current-container {
+        margin-top: 200px;
+    }
+    img {
+        width: 250px;
+    }
 }
