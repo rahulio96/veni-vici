@@ -1,0 +1,21 @@
+.ban-list-container {
+    display: flex;
+    flex-direction: column  ;
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding: 20px;
+}
+
+@media only screen and (max-width: 762px) {
+    .ban-list-container {
+        height: 20%;
+        right: auto;
+        width: 100%;
+    }
+}

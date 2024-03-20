@@ -1,0 +1,6 @@
+.current-container {
+    background-color: black;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+}
