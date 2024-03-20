@@ -3,4 +3,11 @@
     padding: 5%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+img {
+    width: 300px;
+    height: auto;
+    margin-top: 50px;
 }
