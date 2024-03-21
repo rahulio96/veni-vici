@@ -25,10 +25,19 @@
 }
 
 .history-item-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.history-item {
     border: 1px solid #2274A5;
     border-radius: 10px;
     padding: 2px;
+    margin: 0 auto;
     margin-top: 10px;
+    width: fit-content;
 }
 
 @media only screen and (max-width: 900px) {
@@ -39,5 +48,10 @@
         width: 100%;
         bottom: 0;
         border-top: 1px solid #2274A5;
+        flex-direction: column;
+    }
+
+    .history-img {
+        width: 50px;
     }
 }

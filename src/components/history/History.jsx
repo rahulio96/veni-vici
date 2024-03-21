@@ -8,7 +8,7 @@ function History({ historyList }) {
           <p>Who have we seen so far?</p>
           <div>
             {historyList.map((obj, index) => (
-                <div key={index} className='history-item-container'>
+                <div key={index} className='history-item'>
                     <img className='history-img' src={obj.url} />
                     <p className='description'>A {obj.breed} cat format {obj.country}</p>
                 </div>
