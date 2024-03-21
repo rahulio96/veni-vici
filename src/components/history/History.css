@@ -1,0 +1,43 @@
+.history-container {
+    display: flex;
+    flex-direction: column  ;
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding: 20px;
+}
+
+.history-img {
+    width: 75px;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.description {
+    font-size: small;
+    padding: 5px;
+}
+
+.history-item-container {
+    border: 1px solid #2274A5;
+    border-radius: 10px;
+    padding: 2px;
+    margin-top: 10px;
+}
+
+@media only screen and (max-width: 900px) {
+    .history-container {
+        height: 5%;
+        top: auto;
+        left: auto;
+        width: 100%;
+        bottom: 0;
+        border-top: 1px solid #2274A5;
+    }
+}
