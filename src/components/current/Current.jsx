@@ -45,7 +45,6 @@ function Current() {
       currentImg = data[0].url
 
       if (!excludedList.includes(currentBreed) && !excludedList.includes(currentCountry)) {
-        console.log(data[0])
         setImgURL(currentImg)
         setBreed(currentBreed)
         setWeight(data[0].breeds[0].weight.imperial)
@@ -76,8 +75,8 @@ function Current() {
       <BanList excludedList={excludedList} updateExcludedList={updateExcludedList}/>
       <History historyList={historyList}/>
       <div className='current-container'>
-        <h1> Veni Vici!</h1>
-        <p>Discover cats from your wildest dreams?</p>
+        <h1>Veni Vici!</h1>
+        <p>Do you like cats? Click the button...</p>
         <div className='details-container'>
           {breed == '' ? <></> : <button onClick={excludeBreed} className='details'>{breed}</button>}
           {country == '' ? <></> : <button onClick={excludeCountry} className='details'>{country}</button>}
